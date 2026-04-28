@@ -1,0 +1,335 @@
+# Target companies for daily PM role scraping
+#
+# Format:
+#   - name: Display name
+#     slug: ATS board identifier (case-sensitive)
+#     ats: greenhouse | lever
+#     domain: retail | fintech | logistics | adjacent
+#     verified: true | false  (true = manually confirmed; false = candidate, may 404)
+#     notes: optional context
+#
+# Verified entries (true) confirmed via search on 2026-04-28.
+# Unverified entries (false) are reasonable candidates from training data.
+# Scrapers gracefully skip any 404s; prune dead entries after first run.
+
+companies:
+
+  # ============== RETAIL / eCOMMERCE — Greenhouse ==============
+  - name: Instacart
+    slug: instacart
+    ats: greenhouse
+    domain: retail
+    verified: true
+
+  - name: DoorDash
+    slug: doordashusa
+    ats: greenhouse
+    domain: retail
+    verified: true
+    notes: Logistics-adjacent; covers both retail and shipping themes
+
+  - name: Wayfair
+    slug: wayfair
+    ats: greenhouse
+    domain: retail
+    verified: true
+
+  - name: Glossier
+    slug: glossier
+    ats: greenhouse
+    domain: retail
+    verified: true
+
+  - name: Faire
+    slug: faire
+    ats: greenhouse
+    domain: retail
+    verified: false
+
+  - name: Warby Parker
+    slug: warbyparker
+    ats: greenhouse
+    domain: retail
+    verified: false
+
+  - name: Bombas
+    slug: bombas
+    ats: greenhouse
+    domain: retail
+    verified: false
+
+  - name: Allbirds
+    slug: allbirds
+    ats: greenhouse
+    domain: retail
+    verified: false
+
+  - name: Rothys
+    slug: rothys
+    ats: greenhouse
+    domain: retail
+    verified: false
+
+  - name: ThredUp
+    slug: thredup
+    ats: greenhouse
+    domain: retail
+    verified: false
+
+  - name: StockX
+    slug: stockx
+    ats: greenhouse
+    domain: retail
+    verified: false
+
+  - name: GOAT
+    slug: goatgroup
+    ats: greenhouse
+    domain: retail
+    verified: false
+
+  - name: Thrasio
+    slug: thrasio
+    ats: greenhouse
+    domain: retail
+    verified: false
+
+  - name: Bolt
+    slug: bolt
+    ats: greenhouse
+    domain: retail
+    verified: false
+    notes: Checkout/eComm infrastructure — strong fit for payments/checkout PM background
+
+  # ============== FINTECH — Greenhouse ==============
+  - name: Stripe
+    slug: stripe
+    ats: greenhouse
+    domain: fintech
+    verified: true
+
+  - name: Brex
+    slug: brex
+    ats: greenhouse
+    domain: fintech
+    verified: true
+
+  - name: Mercury
+    slug: mercury
+    ats: greenhouse
+    domain: fintech
+    verified: true
+
+  - name: Affirm
+    slug: affirm
+    ats: greenhouse
+    domain: fintech
+    verified: true
+
+  - name: Coinbase
+    slug: coinbase
+    ats: greenhouse
+    domain: fintech
+    verified: true
+
+  - name: Toast
+    slug: Toast
+    ats: greenhouse
+    domain: fintech
+    verified: true
+    notes: Restaurant FinTech/POS; case-sensitive slug
+
+  - name: Gusto
+    slug: gusto
+    ats: greenhouse
+    domain: fintech
+    verified: true
+
+  - name: Modern Treasury
+    slug: moderntreasury
+    ats: greenhouse
+    domain: fintech
+    verified: false
+
+  - name: Alloy
+    slug: alloy
+    ats: greenhouse
+    domain: fintech
+    verified: false
+
+  - name: Lithic
+    slug: lithic
+    ats: greenhouse
+    domain: fintech
+    verified: false
+
+  - name: Marqeta
+    slug: marqeta
+    ats: greenhouse
+    domain: fintech
+    verified: false
+
+  - name: Unit
+    slug: unit
+    ats: greenhouse
+    domain: fintech
+    verified: false
+
+  - name: Pipe
+    slug: pipe
+    ats: greenhouse
+    domain: fintech
+    verified: false
+
+  - name: SoFi
+    slug: sofi
+    ats: greenhouse
+    domain: fintech
+    verified: false
+
+  - name: Robinhood
+    slug: robinhood
+    ats: greenhouse
+    domain: fintech
+    verified: false
+
+  - name: Chime
+    slug: chime
+    ats: greenhouse
+    domain: fintech
+    verified: false
+
+  - name: Block
+    slug: square
+    ats: greenhouse
+    domain: fintech
+    verified: false
+    notes: Square parent — payments, Cash App
+
+  # ============== FINTECH — Lever ==============
+  - name: Wealthfront
+    slug: wealthfront
+    ats: lever
+    domain: fintech
+    verified: true
+
+  - name: Betterment
+    slug: betterment
+    ats: lever
+    domain: fintech
+    verified: false
+
+  # ============== SHIPPING / LOGISTICS — Greenhouse ==============
+  - name: Flexport
+    slug: flexport
+    ats: greenhouse
+    domain: logistics
+    verified: true
+
+  - name: FourKites
+    slug: fourkites
+    ats: greenhouse
+    domain: logistics
+    verified: true
+
+  - name: ShipBob
+    slug: shipbob
+    ats: greenhouse
+    domain: logistics
+    verified: false
+
+  - name: Shippo
+    slug: shippo
+    ats: greenhouse
+    domain: logistics
+    verified: false
+
+  - name: Project44
+    slug: project44
+    ats: greenhouse
+    domain: logistics
+    verified: false
+
+  - name: Stord
+    slug: stord
+    ats: greenhouse
+    domain: logistics
+    verified: false
+
+  - name: Loadsmart
+    slug: loadsmart
+    ats: greenhouse
+    domain: logistics
+    verified: false
+
+  - name: Nuvocargo
+    slug: nuvocargo
+    ats: greenhouse
+    domain: logistics
+    verified: false
+
+  - name: Forto
+    slug: forto
+    ats: greenhouse
+    domain: logistics
+    verified: false
+
+  - name: Veho
+    slug: veho
+    ats: greenhouse
+    domain: logistics
+    verified: false
+
+  - name: Convoy
+    slug: convoy
+    ats: greenhouse
+    domain: logistics
+    verified: false
+    notes: Wound down 2023 but slug may still resolve; will prune if 404
+
+  # ============== ADJACENT (PM-rich, AI-forward, may surface relevant roles) ==============
+  - name: Airbnb
+    slug: airbnb
+    ats: greenhouse
+    domain: adjacent
+    verified: false
+    notes: Marketplace + payments
+
+  - name: Lyft
+    slug: lyft
+    ats: greenhouse
+    domain: adjacent
+    verified: false
+    notes: Logistics-adjacent
+
+  - name: Uber
+    slug: uber
+    ats: greenhouse
+    domain: adjacent
+    verified: false
+
+  - name: Notion
+    slug: notion
+    ats: greenhouse
+    domain: adjacent
+    verified: false
+    notes: AI PM roles
+
+  - name: Anthropic
+    slug: anthropic
+    ats: greenhouse
+    domain: adjacent
+    verified: false
+    notes: Pure AI
+
+  - name: Scale AI
+    slug: scaleai
+    ats: greenhouse
+    domain: adjacent
+    verified: false
+
+  - name: Cohere
+    slug: cohere
+    ats: greenhouse
+    domain: adjacent
+    verified: false
