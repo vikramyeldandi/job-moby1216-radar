@@ -1,5 +1,278 @@
 {
-  "seen_ids": [],
-  "last_run": null,
-  "_comment": "This file tracks job IDs already surfaced. Populated by daily.yml workflow. Do not edit by hand."
+  "seen_ids": [
+    {
+      "id": "greenhouse:instacart:7597064",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:glossier:7814765",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:faire:8425967002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:faire:8284690002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:faire:8462945002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:faire:8431976002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:bombas:7653613",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:bombas:7583985",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:stockx:8498819002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:stripe:7812856",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:stripe:7819059",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8433470002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8432707002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8433461002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8439924002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8439913002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8439927002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8438581002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8438580002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8438582002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8432698002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8432702002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8432703002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8436527002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8436530002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8436528002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:affirm:7601069003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:affirm:7615044003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:coinbase:7789404",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:Toast:7650702",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:Toast:7749654",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:Toast:7716093",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:gusto:7083259",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:gusto:7665272",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:gusto:7312754",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:gusto:7354943",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:gusto:7581996",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:gusto:7138952",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:marqeta:7777778",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7639014003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7449636003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7570377003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7580153003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7670800003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7659259003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7638977003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7671174003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7687964003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7687002003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7670786003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7644779003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7697158003",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:robinhood:7587151",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:robinhood:7821803",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:robinhood:7812801",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:chime:8525787002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:chime:8525785002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:chime:8499435002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:flexport:7740288",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:flexport:7849059",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:lyft:8318645002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:lyft:8519081002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:lyft:8518938002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:lyft:8518980002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:lyft:8513755002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:lyft:8461144002",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:anthropic:5114845008",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:scaleai:4612403005",
+      "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    }
+  ],
+  "last_run": "2026-04-28T22:45:02.331757+00:00",
+  "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
