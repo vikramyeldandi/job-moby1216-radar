@@ -62,7 +62,7 @@ open docs/index.html
 
 - GitHub Actions: free (public repo)
 - GitHub Pages: free
-- Anthropic API: ~$0.50/month at current scrape volume (Claude Haiku)
+- Anthropic API: ~$1-2/month at current scrape volume (Claude Haiku 4.5)
 - Resend: free tier (100 emails/day) — using <1/day
 - Domain registration on companies.yaml: $0
 
