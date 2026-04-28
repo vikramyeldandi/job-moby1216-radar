@@ -1,0 +1,80 @@
+name: Daily Job Radar
+
+# 6am MT = 12:00 UTC (during MDT, March-November) or 13:00 UTC (during MST, November-March).
+# We pick 13:00 UTC to favor MST. During MDT this runs at 7am local; close enough.
+# If you want exact 6am MT year-round, you'd need two cron entries or accept the DST drift.
+on:
+  schedule:
+    - cron: '0 13 * * *'  # 13:00 UTC daily
+  workflow_dispatch:  # allows manual trigger from Actions tab
+
+# We need write permission to commit results.json + seen.json back to the repo,
+# and write permission to deploy to Pages.
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  run-radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run radar pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python main.py
+
+      - name: Commit updated state and results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state/seen.json docs/results.json docs/index.html
+          # Only commit if something actually changed
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Daily run: $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
+  deploy-pages:
+    needs: run-radar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main  # ensure we get the just-committed results
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
