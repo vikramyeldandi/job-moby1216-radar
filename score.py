@@ -15,7 +15,9 @@ import json
 import os
 import re
 from typing import List, Dict, Any
-from anthropic import Anthropic
+
+# Anthropic SDK is imported lazily inside score_all so tests can mock the module
+# without requiring the real package at import time.
 
 # Model selection. Haiku 4.5 is the current cheapest fast model.
 MODEL = "claude-haiku-4-5"
@@ -102,7 +104,7 @@ def parse_score_response(text: str) -> Dict[str, Any]:
     }
 
 
-def score_one(client: Anthropic, profile_text: str, job: Dict[str, Any]) -> Dict[str, Any]:
+def score_one(client, profile_text: str, job: Dict[str, Any]) -> Dict[str, Any]:
     """Score a single job. Returns the job dict augmented with score fields."""
     prompt = build_scoring_prompt(profile_text, job)
 
@@ -138,6 +140,8 @@ def score_all(jobs: List[Dict[str, Any]], profile_path: str = "profile.md") -> L
     Score all jobs. Reads profile.md from disk.
     Requires ANTHROPIC_API_KEY in environment.
     """
+    from anthropic import Anthropic  # imported lazily
+
     api_key = os.environ.get("ANTHROPIC_API_KEY")
     if not api_key:
         raise RuntimeError("ANTHROPIC_API_KEY not set in environment")
