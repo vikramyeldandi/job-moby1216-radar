@@ -51,7 +51,13 @@ jobs:
             echo "No changes to commit"
           else
             git commit -m "Daily run: $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
+            # Rebase on top of any concurrent commits (e.g., manual edits, dashboard PAT writes
+            # to docs/statuses.json). Retry up to 3 times in case of further concurrent writes.
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "Push attempt $i failed, retrying..."
+              sleep 2
+            done
           fi
 
   deploy-pages:
