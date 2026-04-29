@@ -16,7 +16,11 @@
     --score-10: #4ade80;
     --score-9: #86efac;
     --score-8: #fbbf24;
+    --status-saved: #60a5fa;
+    --status-applied: #4ade80;
+    --status-dismissed: #6b7280;
     --border: #2a3140;
+    --danger: #f87171;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -26,10 +30,7 @@
     line-height: 1.5;
     padding: 2rem 1rem;
   }
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
+  .container { max-width: 1100px; margin: 0 auto; }
   header {
     display: flex;
     justify-content: space-between;
@@ -40,15 +41,21 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
-  h1 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: var(--accent);
-  }
-  .meta {
+  h1 { font-size: 1.75rem; font-weight: 600; color: var(--accent); }
+  .meta { color: var(--text-dim); font-size: 0.875rem; }
+  .header-actions { display: flex; gap: 0.5rem; }
+  .small-btn {
+    background: var(--card);
     color: var(--text-dim);
-    font-size: 0.875rem;
+    border: 1px solid var(--border);
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.15s;
   }
+  .small-btn:hover { background: var(--card-hi); color: var(--text); }
+
   .controls {
     display: flex;
     gap: 0.75rem;
@@ -71,18 +78,26 @@
     color: white;
     border-color: var(--accent);
   }
+
   .role {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1.25rem;
     margin-bottom: 0.75rem;
-    transition: transform 0.1s, border-color 0.1s;
+    transition: opacity 0.2s, border-color 0.1s;
   }
-  .role:hover {
-    border-color: var(--accent);
-    transform: translateY(-1px);
+  .role:hover { border-color: var(--accent); }
+  .role.status-applied,
+  .role.status-dismissed {
+    opacity: 0.5;
+    background: transparent;
   }
+  .role.status-applied:hover,
+  .role.status-dismissed:hover {
+    opacity: 0.85;
+  }
+
   .role-header {
     display: flex;
     justify-content: space-between;
@@ -90,22 +105,17 @@
     gap: 1rem;
     margin-bottom: 0.5rem;
   }
-  .role-title-block { flex: 1; }
+  .role-title-block { flex: 1; min-width: 0; }
   .role-title {
     font-size: 1.125rem;
     font-weight: 600;
     color: var(--text);
     margin-bottom: 0.25rem;
+    overflow-wrap: anywhere;
   }
-  .role-title a {
-    color: inherit;
-    text-decoration: none;
-  }
+  .role-title a { color: inherit; text-decoration: none; }
   .role-title a:hover { color: var(--accent-hi); }
-  .role-company {
-    color: var(--text-dim);
-    font-size: 0.95rem;
-  }
+  .role-company { color: var(--text-dim); font-size: 0.95rem; }
   .score-badge {
     font-size: 1.5rem;
     font-weight: 700;
@@ -121,17 +131,15 @@
   .score-10 { background: var(--score-10); }
   .score-9  { background: var(--score-9); }
   .score-8  { background: var(--score-8); }
-  .role-rationale {
-    color: var(--text);
-    margin-bottom: 0.75rem;
-    line-height: 1.55;
-  }
+
+  .role-rationale { color: var(--text); margin-bottom: 0.75rem; line-height: 1.55; }
   .role-meta {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     color: var(--text-dim);
     font-size: 0.85rem;
+    margin-bottom: 0.75rem;
   }
   .tag {
     background: var(--card-hi);
@@ -157,11 +165,113 @@
     font-size: 0.85rem;
     color: var(--text-dim);
   }
+
+  .status-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border);
+    align-items: center;
+  }
+  .status-btn {
+    background: transparent;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.15s;
+  }
+  .status-btn:hover { background: var(--card-hi); color: var(--text); }
+  .status-btn.active.status-new      { background: var(--accent); color: white; border-color: var(--accent); }
+  .status-btn.active.status-saved    { background: var(--status-saved); color: #0f1419; border-color: var(--status-saved); }
+  .status-btn.active.status-applied  { background: var(--status-applied); color: #0f1419; border-color: var(--status-applied); }
+  .status-btn.active.status-dismissed{ background: var(--status-dismissed); color: white; border-color: var(--status-dismissed); }
+  .status-btn:disabled { opacity: 0.5; cursor: wait; }
+  .applied-timestamp {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+    margin-left: auto;
+    font-style: italic;
+  }
+
   .empty {
     text-align: center;
     padding: 4rem 1rem;
     color: var(--text-dim);
   }
+
+  /* PAT setup modal */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    padding: 1rem;
+  }
+  .modal-backdrop.show { display: flex; }
+  .modal {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 540px;
+    width: 100%;
+  }
+  .modal h2 { color: var(--accent); margin-bottom: 1rem; font-size: 1.3rem; }
+  .modal p { color: var(--text-dim); margin-bottom: 1rem; line-height: 1.5; font-size: 0.9rem; }
+  .modal ol { margin-left: 1.5rem; margin-bottom: 1rem; color: var(--text-dim); font-size: 0.9rem; }
+  .modal ol li { margin-bottom: 0.5rem; }
+  .modal a { color: var(--accent-hi); }
+  .modal input {
+    width: 100%;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 0.6rem 0.75rem;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+  .modal-actions { display: flex; gap: 0.75rem; justify-content: flex-end; }
+  .modal-actions button {
+    padding: 0.6rem 1.25rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border: 1px solid var(--border);
+  }
+  .btn-primary { background: var(--accent); color: white; border-color: var(--accent); }
+  .btn-primary:hover { background: var(--accent-hi); }
+  .btn-secondary { background: transparent; color: var(--text-dim); }
+  .modal-error { color: var(--danger); margin-bottom: 1rem; font-size: 0.85rem; }
+
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1.25rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none;
+    z-index: 50;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+  .toast.error { border-color: var(--danger); color: var(--danger); }
+
   footer {
     margin-top: 3rem;
     padding-top: 1rem;
@@ -180,16 +290,18 @@
       <h1>Job Radar</h1>
       <div class="meta" id="meta">Loading...</div>
     </div>
+    <div class="header-actions">
+      <button class="small-btn" id="btn-setup-pat">Setup token</button>
+    </div>
   </header>
 
   <div class="controls">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="10">Score 10</button>
-    <button class="filter-btn" data-filter="9">Score 9</button>
-    <button class="filter-btn" data-filter="8">Score 8</button>
-    <button class="filter-btn" data-filter="fintech">FinTech</button>
-    <button class="filter-btn" data-filter="retail">Retail</button>
-    <button class="filter-btn" data-filter="logistics">Logistics</button>
+    <button class="filter-btn active" data-filter="all">All Active</button>
+    <button class="filter-btn" data-filter="new">New</button>
+    <button class="filter-btn" data-filter="saved">Saved</button>
+    <button class="filter-btn" data-filter="applied">Applied</button>
+    <button class="filter-btn" data-filter="dismissed">Dismissed</button>
+    <button class="filter-btn" data-filter="all-incl-archived">Show all</button>
   </div>
 
   <div id="roles"></div>
@@ -199,9 +311,50 @@
   </footer>
 </div>
 
+<!-- PAT setup modal -->
+<div class="modal-backdrop" id="pat-modal">
+  <div class="modal">
+    <h2>Setup GitHub token</h2>
+    <p>Status tracking (Saved / Applied / Dismissed) commits to your repo so it syncs across devices. This needs a GitHub Personal Access Token.</p>
+    <ol>
+      <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub fine-grained PAT page</a></li>
+      <li><b>Resource owner:</b> vikramyeldandi</li>
+      <li><b>Repository access:</b> Only select repositories → <code>job-moby1216-radar</code></li>
+      <li><b>Permissions:</b> Repository permissions → <b>Contents</b> → <b>Read and write</b></li>
+      <li><b>Expiration:</b> 90 days</li>
+      <li>Click <b>Generate token</b>, copy it (starts with <code>github_pat_</code>), paste below</li>
+    </ol>
+    <div class="modal-error" id="pat-error" style="display: none;"></div>
+    <input type="password" id="pat-input" placeholder="github_pat_...">
+    <div class="modal-actions">
+      <button class="btn-secondary" id="pat-cancel">Cancel</button>
+      <button class="btn-primary" id="pat-save">Save token</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
 <script>
+const REPO_OWNER = 'vikramyeldandi';
+const REPO_NAME = 'job-moby1216-radar';
+const STATUSES_PATH = 'docs/statuses.json';
+
 let allRoles = [];
+let statuses = {};
+let statusesSha = null;
 let activeFilter = 'all';
+
+function getPAT() { return localStorage.getItem('job_radar_pat') || ''; }
+function setPAT(token) { localStorage.setItem('job_radar_pat', token); }
+function clearPAT() { localStorage.removeItem('job_radar_pat'); }
+
+function showToast(msg, isError = false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (isError ? ' error' : '');
+  setTimeout(() => { t.className = 'toast'; }, 3000);
+}
 
 async function loadResults() {
   try {
@@ -210,68 +363,249 @@ async function loadResults() {
     const data = await res.json();
     allRoles = data.roles || [];
     document.getElementById('meta').textContent =
-      `${allRoles.length} roles · last run ${new Date(data.last_run).toLocaleString()}`;
-    renderRoles();
+      allRoles.length + ' roles \u00b7 last run ' + new Date(data.last_run).toLocaleString();
   } catch (e) {
-    document.getElementById('meta').textContent = 'No results yet — workflow has not run.';
+    document.getElementById('meta').textContent = 'No results yet \u2014 workflow has not run.';
     document.getElementById('roles').innerHTML =
-      '<div class="empty">Run the workflow once via Actions → Daily Job Radar → Run workflow.</div>';
+      '<div class="empty">Run the workflow once via Actions \u2192 Daily Job Radar \u2192 Run workflow.</div>';
   }
 }
 
+async function loadStatuses() {
+  try {
+    const res = await fetch('statuses.json?t=' + Date.now());
+    if (res.ok) {
+      const data = await res.json();
+      statuses = data.statuses || {};
+    }
+  } catch (e) {
+    statuses = {};
+  }
+
+  if (getPAT()) {
+    try {
+      const apiUrl = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contents/' + STATUSES_PATH;
+      const r = await fetch(apiUrl, {
+        headers: { 'Authorization': 'Bearer ' + getPAT(), 'Accept': 'application/vnd.github+json' }
+      });
+      if (r.ok) {
+        const json = await r.json();
+        statusesSha = json.sha;
+      } else if (r.status === 404) {
+        statusesSha = null;
+      }
+    } catch (e) {
+      console.warn('Could not fetch statuses SHA:', e);
+    }
+  }
+}
+
+function getStatus(roleId) {
+  return (statuses[roleId] && statuses[roleId].status) || 'new';
+}
+
+async function setStatus(roleId, newStatus, btnElement) {
+  if (!getPAT()) {
+    showToast('Set up GitHub token first', true);
+    document.getElementById('pat-modal').classList.add('show');
+    return;
+  }
+
+  const oldStatus = getStatus(roleId);
+  const oldEntry = statuses[roleId];
+  const buttons = btnElement && btnElement.parentElement && btnElement.parentElement.querySelectorAll('.status-btn');
+  if (buttons) buttons.forEach(function(b){ b.disabled = true; });
+
+  if (newStatus === 'new') {
+    delete statuses[roleId];
+  } else {
+    statuses[roleId] = { status: newStatus };
+    if (newStatus === 'applied') {
+      statuses[roleId].applied_at = new Date().toISOString();
+    }
+  }
+
+  try {
+    await commitStatuses();
+    renderRoles();
+    showToast('Marked ' + newStatus);
+  } catch (e) {
+    if (oldStatus === 'new') delete statuses[roleId];
+    else statuses[roleId] = oldEntry;
+    showToast('Failed: ' + e.message, true);
+    renderRoles();
+  } finally {
+    if (buttons) buttons.forEach(function(b){ b.disabled = false; });
+  }
+}
+
+async function commitStatuses() {
+  const apiUrl = 'https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/contents/' + STATUSES_PATH;
+  const content = JSON.stringify({
+    statuses: statuses,
+    last_updated: new Date().toISOString(),
+  }, null, 2);
+  const contentB64 = btoa(unescape(encodeURIComponent(content)));
+
+  const body = {
+    message: 'Update status: ' + Object.keys(statuses).length + ' tracked',
+    content: contentB64,
+    committer: {
+      name: 'job-radar-dashboard',
+      email: 'dashboard@noreply.local',
+    },
+  };
+  if (statusesSha) body.sha = statusesSha;
+
+  const res = await fetch(apiUrl, {
+    method: 'PUT',
+    headers: {
+      'Authorization': 'Bearer ' + getPAT(),
+      'Accept': 'application/vnd.github+json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    const err = await res.json().catch(function(){ return {}; });
+    if (res.status === 401) throw new Error('Invalid token. Click "Setup token" to fix.');
+    if (res.status === 409) {
+      await loadStatuses();
+      throw new Error('Conflict, please try again');
+    }
+    throw new Error(err.message || 'HTTP ' + res.status);
+  }
+
+  const result = await res.json();
+  statusesSha = result.content && result.content.sha;
+}
+
 function renderRoles() {
-  const filtered = allRoles.filter(r => {
-    if (activeFilter === 'all') return true;
-    if (['10', '9', '8'].includes(activeFilter)) return r.score === parseInt(activeFilter);
-    return r.domain === activeFilter;
+  const visible = allRoles.filter(function(r) {
+    const s = getStatus(r.id);
+    if (activeFilter === 'all') return s !== 'applied' && s !== 'dismissed';
+    if (activeFilter === 'all-incl-archived') return true;
+    return s === activeFilter;
+  });
+
+  const isArchived = function(r) {
+    const s = getStatus(r.id);
+    return s === 'applied' || s === 'dismissed';
+  };
+  visible.sort(function(a, b) {
+    const aArch = isArchived(a) ? 1 : 0;
+    const bArch = isArchived(b) ? 1 : 0;
+    if (aArch !== bArch) return aArch - bArch;
+    return (b.score || 0) - (a.score || 0);
   });
 
   const container = document.getElementById('roles');
-  if (filtered.length === 0) {
+  if (visible.length === 0) {
     container.innerHTML = '<div class="empty">No roles matching this filter.</div>';
     return;
   }
 
-  container.innerHTML = filtered.map(r => `
-    <div class="role">
-      <div class="role-header">
-        <div class="role-title-block">
-          <div class="role-title">
-            <a href="${escapeHtml(r.url)}" target="_blank" rel="noopener">${escapeHtml(r.title)}</a>
-          </div>
-          <div class="role-company">${escapeHtml(r.company)} · ${escapeHtml(r.location || 'Location not stated')}</div>
-        </div>
-        <div class="score-badge score-${r.score}">${r.score}</div>
-      </div>
-      <div class="role-rationale">${escapeHtml(r.rationale || '')}</div>
-      <div class="role-meta">
-        <span class="tag tag-${r.domain}">${escapeHtml(r.domain || '')}</span>
-        <span class="tag tag-ai-${r.ai_signal}">AI: ${escapeHtml(r.ai_signal || 'none')}</span>
-        <span>${escapeHtml(r.title_fit || '')} fit</span>
-        <span>${r.first_seen ? new Date(r.first_seen).toLocaleDateString() : ''}</span>
-      </div>
-      ${r.concerns ? `<div class="role-concerns">⚠ ${escapeHtml(r.concerns)}</div>` : ''}
-    </div>
-  `).join('');
+  container.innerHTML = visible.map(function(r) {
+    const s = getStatus(r.id);
+    const appliedAt = statuses[r.id] && statuses[r.id].applied_at;
+    return ''
+      + '<div class="role status-' + s + '" data-id="' + escapeHtml(r.id) + '">'
+      +   '<div class="role-header">'
+      +     '<div class="role-title-block">'
+      +       '<div class="role-title">'
+      +         '<a href="' + escapeHtml(r.url) + '" target="_blank" rel="noopener">' + escapeHtml(r.title) + '</a>'
+      +       '</div>'
+      +       '<div class="role-company">' + escapeHtml(r.company) + ' \u00b7 ' + escapeHtml(r.location || 'Location not stated') + '</div>'
+      +     '</div>'
+      +     '<div class="score-badge score-' + r.score + '">' + r.score + '</div>'
+      +   '</div>'
+      +   '<div class="role-rationale">' + escapeHtml(r.rationale || '') + '</div>'
+      +   '<div class="role-meta">'
+      +     '<span class="tag tag-' + r.domain + '">' + escapeHtml(r.domain || '') + '</span>'
+      +     '<span class="tag tag-ai-' + r.ai_signal + '">AI: ' + escapeHtml(r.ai_signal || 'none') + '</span>'
+      +     '<span>' + escapeHtml(r.title_fit || '') + ' fit</span>'
+      +     '<span>' + (r.first_seen ? new Date(r.first_seen).toLocaleDateString() : '') + '</span>'
+      +   '</div>'
+      +   (r.concerns ? '<div class="role-concerns">\u26a0 ' + escapeHtml(r.concerns) + '</div>' : '')
+      +   '<div class="status-bar">'
+      +     '<button class="status-btn status-new ' + (s === 'new' ? 'active' : '') + '" data-status="new">New</button>'
+      +     '<button class="status-btn status-saved ' + (s === 'saved' ? 'active' : '') + '" data-status="saved">Saved</button>'
+      +     '<button class="status-btn status-applied ' + (s === 'applied' ? 'active' : '') + '" data-status="applied">Applied</button>'
+      +     '<button class="status-btn status-dismissed ' + (s === 'dismissed' ? 'active' : '') + '" data-status="dismissed">Dismissed</button>'
+      +     (appliedAt ? '<span class="applied-timestamp">applied ' + new Date(appliedAt).toLocaleDateString() + '</span>' : '')
+      +   '</div>'
+      + '</div>';
+  }).join('');
+
+  container.querySelectorAll('.status-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      const roleEl = e.target.closest('.role');
+      const roleId = roleEl.dataset.id;
+      const newStatus = btn.dataset.status;
+      setStatus(roleId, newStatus, btn);
+    });
+  });
 }
 
 function escapeHtml(s) {
   if (!s) return '';
-  return String(s).replace(/[&<>"']/g, c => ({
-    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-  })[c]);
+  return String(s).replace(/[&<>"']/g, function(c) {
+    return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
+  });
 }
 
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+document.querySelectorAll('.filter-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
     btn.classList.add('active');
     activeFilter = btn.dataset.filter;
     renderRoles();
   });
 });
 
-loadResults();
+const patModal = document.getElementById('pat-modal');
+document.getElementById('btn-setup-pat').addEventListener('click', function() {
+  document.getElementById('pat-input').value = getPAT();
+  document.getElementById('pat-error').style.display = 'none';
+  patModal.classList.add('show');
+});
+document.getElementById('pat-cancel').addEventListener('click', function() {
+  patModal.classList.remove('show');
+});
+document.getElementById('pat-save').addEventListener('click', async function() {
+  const val = document.getElementById('pat-input').value.trim();
+  const errEl = document.getElementById('pat-error');
+  if (!val.startsWith('github_pat_')) {
+    errEl.textContent = 'Token should start with github_pat_';
+    errEl.style.display = 'block';
+    return;
+  }
+  setPAT(val);
+  try {
+    const r = await fetch('https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME, {
+      headers: { 'Authorization': 'Bearer ' + val, 'Accept': 'application/vnd.github+json' }
+    });
+    if (!r.ok) throw new Error('Token check failed: HTTP ' + r.status);
+    patModal.classList.remove('show');
+    showToast('Token saved');
+    await loadStatuses();
+    renderRoles();
+  } catch (e) {
+    errEl.textContent = e.message;
+    errEl.style.display = 'block';
+    clearPAT();
+  }
+});
+
+(async function() {
+  await loadResults();
+  await loadStatuses();
+  renderRoles();
+  if (!getPAT() && allRoles.length > 0) {
+    showToast('Click "Setup token" to enable status tracking');
+  }
+})();
 </script>
 </body>
 </html>
