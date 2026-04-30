@@ -271,8 +271,12 @@
     {
       "id": "greenhouse:scaleai:4612403005",
       "first_seen": "2026-04-28T22:45:02.331660+00:00"
+    },
+    {
+      "id": "greenhouse:scaleai:4669229005",
+      "first_seen": "2026-04-30T15:10:57.464356+00:00"
     }
   ],
-  "last_run": "2026-04-29T19:42:16.208636+00:00",
+  "last_run": "2026-04-30T15:10:57.464409+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
