@@ -1,9 +1,28 @@
 {
-  "last_run": "2026-05-04T15:11:08.322689+00:00",
+  "last_run": "2026-05-05T15:09:37.083060+00:00",
   "threshold": 8,
-  "total_roles": 31,
-  "new_this_run": 0,
+  "total_roles": 32,
+  "new_this_run": 1,
   "roles": [
+    {
+      "id": "greenhouse:affirm:7718659003",
+      "company": "Affirm",
+      "title": "Director of Product Management, Financial Platforms",
+      "location": "Remote US",
+      "url": "https://job-boards.greenhouse.io/affirm/jobs/7718659003",
+      "department": "Financial Platforms Product",
+      "content": "",
+      "updated_at": "2026-05-05T08:31:26-04:00",
+      "ats": "greenhouse",
+      "ats_slug": "affirm",
+      "score": 9,
+      "rationale": "Director managing 6-10 PMs across Loans Lifecycle and Money Movement. Deep fintech/payments domain match (BNPL, settlement, compliance). Exceeds scale and seniority.",
+      "domain": "fintech",
+      "ai_signal": "moderate",
+      "title_fit": "strong",
+      "concerns": "AI-assisted tools mention is aspirational, not core product work. Loans lifecycle emphasis over fraud/decisioning (Vikram's stronger AI signal).",
+      "first_seen": "2026-05-05T15:09:37.083060+00:00"
+    },
     {
       "id": "greenhouse:instacart:7597064",
       "company": "Instacart",
