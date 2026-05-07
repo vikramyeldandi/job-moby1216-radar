@@ -283,8 +283,12 @@
     {
       "id": "greenhouse:airbnb:7834495",
       "first_seen": "2026-05-05T15:09:37.084125+00:00"
+    },
+    {
+      "id": "greenhouse:scaleai:4693004005",
+      "first_seen": "2026-05-07T15:29:20.562300+00:00"
     }
   ],
-  "last_run": "2026-05-06T15:27:33.119063+00:00",
+  "last_run": "2026-05-07T15:29:20.562371+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
