@@ -291,8 +291,16 @@
     {
       "id": "greenhouse:gusto:7843112",
       "first_seen": "2026-05-09T14:17:48.746997+00:00"
+    },
+    {
+      "id": "greenhouse:stripe:7913702",
+      "first_seen": "2026-05-12T15:40:19.582463+00:00"
+    },
+    {
+      "id": "greenhouse:Toast:7733118",
+      "first_seen": "2026-05-12T15:40:19.582463+00:00"
     }
   ],
-  "last_run": "2026-05-11T15:56:05.732652+00:00",
+  "last_run": "2026-05-12T15:40:19.582512+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
