@@ -299,8 +299,16 @@
     {
       "id": "greenhouse:Toast:7733118",
       "first_seen": "2026-05-12T15:40:19.582463+00:00"
+    },
+    {
+      "id": "greenhouse:lyft:8547683002",
+      "first_seen": "2026-05-13T15:43:46.814677+00:00"
+    },
+    {
+      "id": "greenhouse:lyft:8547660002",
+      "first_seen": "2026-05-13T15:43:46.814677+00:00"
     }
   ],
-  "last_run": "2026-05-12T15:40:19.582512+00:00",
+  "last_run": "2026-05-13T15:43:46.814737+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
