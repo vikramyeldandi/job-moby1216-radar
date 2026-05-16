@@ -311,8 +311,12 @@
     {
       "id": "greenhouse:Toast:7904877",
       "first_seen": "2026-05-14T15:19:40.281223+00:00"
+    },
+    {
+      "id": "greenhouse:marqeta:7743054",
+      "first_seen": "2026-05-16T14:22:27.209789+00:00"
     }
   ],
-  "last_run": "2026-05-15T15:13:51.969040+00:00",
+  "last_run": "2026-05-16T14:22:27.209846+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
