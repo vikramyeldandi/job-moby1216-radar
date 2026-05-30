@@ -323,8 +323,20 @@
     {
       "id": "greenhouse:affirm:7694938003",
       "first_seen": "2026-05-20T16:26:44.020525+00:00"
+    },
+    {
+      "id": "greenhouse:instacart:7967233",
+      "first_seen": "2026-05-30T14:41:25.344342+00:00"
+    },
+    {
+      "id": "greenhouse:faire:8572155002",
+      "first_seen": "2026-05-30T14:41:25.344342+00:00"
+    },
+    {
+      "id": "greenhouse:faire:8572160002",
+      "first_seen": "2026-05-30T14:41:25.344342+00:00"
     }
   ],
-  "last_run": "2026-05-29T16:42:48.483880+00:00",
+  "last_run": "2026-05-30T14:41:25.344400+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
