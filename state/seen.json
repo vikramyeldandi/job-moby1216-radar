@@ -355,8 +355,20 @@
     {
       "id": "greenhouse:coinbase:7991474",
       "first_seen": "2026-06-10T16:35:46.580005+00:00"
+    },
+    {
+      "id": "greenhouse:coinbase:7997785",
+      "first_seen": "2026-06-11T16:55:17.272282+00:00"
+    },
+    {
+      "id": "greenhouse:marqeta:7960211",
+      "first_seen": "2026-06-11T16:55:17.272282+00:00"
+    },
+    {
+      "id": "greenhouse:robinhood:7985803",
+      "first_seen": "2026-06-11T16:55:17.272282+00:00"
     }
   ],
-  "last_run": "2026-06-10T16:35:46.580060+00:00",
+  "last_run": "2026-06-11T16:55:17.272336+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
