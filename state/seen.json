@@ -371,8 +371,12 @@
     {
       "id": "greenhouse:Toast:7996885",
       "first_seen": "2026-06-12T16:18:30.866588+00:00"
+    },
+    {
+      "id": "greenhouse:coinbase:7701642",
+      "first_seen": "2026-06-13T15:00:58.684954+00:00"
     }
   ],
-  "last_run": "2026-06-12T16:18:30.866645+00:00",
+  "last_run": "2026-06-13T15:00:58.685008+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
