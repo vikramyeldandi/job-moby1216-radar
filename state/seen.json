@@ -395,8 +395,12 @@
     {
       "id": "greenhouse:coinbase:8017607",
       "first_seen": "2026-06-20T15:03:06.484925+00:00"
+    },
+    {
+      "id": "greenhouse:instacart:8024357",
+      "first_seen": "2026-06-25T15:40:12.665401+00:00"
     }
   ],
-  "last_run": "2026-06-24T15:33:26.874666+00:00",
+  "last_run": "2026-06-25T15:40:12.665456+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
