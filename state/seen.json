@@ -419,8 +419,12 @@
     {
       "id": "greenhouse:stripe:8040052",
       "first_seen": "2026-07-07T15:43:50.591160+00:00"
+    },
+    {
+      "id": "greenhouse:Toast:7957617",
+      "first_seen": "2026-07-09T15:56:29.394126+00:00"
     }
   ],
-  "last_run": "2026-07-08T15:22:17.886858+00:00",
+  "last_run": "2026-07-09T15:56:29.394182+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
