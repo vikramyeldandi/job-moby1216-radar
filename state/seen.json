@@ -439,8 +439,12 @@
     {
       "id": "greenhouse:affirm:7801336003",
       "first_seen": "2026-07-15T14:50:17.449814+00:00"
+    },
+    {
+      "id": "greenhouse:robinhood:7968044",
+      "first_seen": "2026-07-16T15:02:14.947321+00:00"
     }
   ],
-  "last_run": "2026-07-15T14:50:17.449878+00:00",
+  "last_run": "2026-07-16T15:02:14.947373+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
