@@ -447,8 +447,16 @@
     {
       "id": "greenhouse:chime:8393494002",
       "first_seen": "2026-07-18T14:20:17.192180+00:00"
+    },
+    {
+      "id": "greenhouse:affirm:7808142003",
+      "first_seen": "2026-07-24T14:54:39.225828+00:00"
+    },
+    {
+      "id": "greenhouse:robinhood:8079744",
+      "first_seen": "2026-07-24T14:54:39.225828+00:00"
     }
   ],
-  "last_run": "2026-07-23T15:08:37.352541+00:00",
+  "last_run": "2026-07-24T14:54:39.225881+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
