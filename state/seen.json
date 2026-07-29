@@ -187,8 +187,100 @@
     {
       "id": "greenhouse:scaleai:4718559005",
       "first_seen": "2026-07-28T15:21:33.789740+00:00"
+    },
+    {
+      "id": "greenhouse:glossier:7814765",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:faire:8462945002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:faire:8431976002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:stripe:7819059",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8433461002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8432707002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8433470002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8438582002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8438580002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8438581002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8432698002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8432703002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8432702002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8436527002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8436530002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8436528002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:coinbase:7789404",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:gusto:7312754",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:robinhood:7587151",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:flexport:7740288",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:lyft:8513755002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:lyft:8461144002",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
+    },
+    {
+      "id": "greenhouse:scaleai:4612403005",
+      "first_seen": "2026-07-29T15:09:28.509646+00:00"
     }
   ],
-  "last_run": "2026-07-28T15:21:33.789790+00:00",
+  "last_run": "2026-07-29T15:09:28.509719+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
