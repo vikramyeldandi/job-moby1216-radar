@@ -291,8 +291,48 @@
     {
       "id": "greenhouse:sofi:7819817003",
       "first_seen": "2026-07-30T15:10:21.273147+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8659220002",
+      "first_seen": "2026-07-31T15:20:07.861513+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8659221002",
+      "first_seen": "2026-07-31T15:20:07.861513+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8659237002",
+      "first_seen": "2026-07-31T15:20:07.861513+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8659210002",
+      "first_seen": "2026-07-31T15:20:07.861513+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8659204002",
+      "first_seen": "2026-07-31T15:20:07.861513+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8659211002",
+      "first_seen": "2026-07-31T15:20:07.861513+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8659241002",
+      "first_seen": "2026-07-31T15:20:07.861513+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8659239002",
+      "first_seen": "2026-07-31T15:20:07.861513+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8659242002",
+      "first_seen": "2026-07-31T15:20:07.861513+00:00"
+    },
+    {
+      "id": "greenhouse:scaleai:4669229005",
+      "first_seen": "2026-07-31T15:20:07.861513+00:00"
     }
   ],
-  "last_run": "2026-07-30T15:10:21.273195+00:00",
+  "last_run": "2026-07-31T15:20:07.861582+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
