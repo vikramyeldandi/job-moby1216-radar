@@ -1,14 +1,6 @@
 {
   "seen_ids": [
     {
-      "id": "greenhouse:stripe:7913702",
-      "first_seen": "2026-05-12T15:40:19.582463+00:00"
-    },
-    {
-      "id": "greenhouse:Toast:7733118",
-      "first_seen": "2026-05-12T15:40:19.582463+00:00"
-    },
-    {
       "id": "greenhouse:lyft:8547683002",
       "first_seen": "2026-05-13T15:43:46.814677+00:00"
     },
@@ -349,6 +341,6 @@
       "first_seen": "2026-08-07T14:13:31.317496+00:00"
     }
   ],
-  "last_run": "2026-08-10T14:19:45.676941+00:00",
+  "last_run": "2026-08-11T14:19:49.821389+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
