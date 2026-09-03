@@ -359,8 +359,16 @@
     {
       "id": "greenhouse:lyft:8735399002",
       "first_seen": "2026-09-02T17:01:41.730347+00:00"
+    },
+    {
+      "id": "greenhouse:brex:8780829002",
+      "first_seen": "2026-09-03T16:57:12.461504+00:00"
+    },
+    {
+      "id": "greenhouse:chime:8569267002",
+      "first_seen": "2026-09-03T16:57:12.461504+00:00"
     }
   ],
-  "last_run": "2026-09-02T17:01:41.730402+00:00",
+  "last_run": "2026-09-03T16:57:12.461556+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
