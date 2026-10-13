@@ -1,10 +1,6 @@
 {
   "seen_ids": [
     {
-      "id": "greenhouse:affirm:7801336003",
-      "first_seen": "2026-07-15T14:50:17.449814+00:00"
-    },
-    {
       "id": "greenhouse:robinhood:7968044",
       "first_seen": "2026-07-16T15:02:14.947321+00:00"
     },
@@ -427,8 +423,16 @@
     {
       "id": "greenhouse:stripe:7517535",
       "first_seen": "2026-10-09T18:40:18.492890+00:00"
+    },
+    {
+      "id": "greenhouse:faire:8631486002",
+      "first_seen": "2026-10-13T19:45:35.430734+00:00"
+    },
+    {
+      "id": "greenhouse:coinbase:8060662",
+      "first_seen": "2026-10-13T19:45:35.430734+00:00"
     }
   ],
-  "last_run": "2026-10-12T21:34:26.830392+00:00",
+  "last_run": "2026-10-13T19:45:35.430784+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
