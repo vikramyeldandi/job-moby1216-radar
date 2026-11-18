@@ -1,18 +1,6 @@
 {
   "seen_ids": [
     {
-      "id": "greenhouse:stripe:7920219",
-      "first_seen": "2026-08-20T13:45:41.239286+00:00"
-    },
-    {
-      "id": "greenhouse:affirm:7694938003",
-      "first_seen": "2026-08-20T13:45:41.239286+00:00"
-    },
-    {
-      "id": "greenhouse:robinhood:8131181",
-      "first_seen": "2026-08-20T13:45:41.239286+00:00"
-    },
-    {
       "id": "greenhouse:robinhood:8044746",
       "first_seen": "2026-08-21T13:44:35.746120+00:00"
     },
@@ -379,8 +367,16 @@
     {
       "id": "greenhouse:robinhood:8384079",
       "first_seen": "2026-11-17T21:31:23.527167+00:00"
+    },
+    {
+      "id": "greenhouse:sofi:7894776003",
+      "first_seen": "2026-11-18T21:07:20.656054+00:00"
+    },
+    {
+      "id": "greenhouse:robinhood:8241579",
+      "first_seen": "2026-11-18T21:07:20.656054+00:00"
     }
   ],
-  "last_run": "2026-11-17T21:31:23.527243+00:00",
+  "last_run": "2026-11-18T21:07:20.656120+00:00",
   "_comment": "This file tracks job IDs already scored. Auto-managed by main.py."
 }
